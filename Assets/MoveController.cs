@@ -8,6 +8,7 @@ public class MoveController : MonoBehaviour {
 	private Vector2 moveInput;
 	private Vector2 lookInput;
 	public CharacterController characterController;
+	private float gravity;
 
 	public void OnMove(InputValue value)
 	{
@@ -21,13 +22,15 @@ public class MoveController : MonoBehaviour {
 
     private void Start() {
 		Cursor.lockState = CursorLockMode.Locked;
-		
 	}
-	// Update is called once per frame
-	void Update() {
-		transform.Translate(moveInput.x * speed * Time.deltaTime, 0f, moveInput.y * speed * Time.deltaTime);		
-		//characterController.Move(new Vector3(moveInput.x * speed * Time.deltaTime, 0f, moveInput.y * speed * Time.deltaTime));
-
+    
+	void Update()
+	{
+		if (transform.position.y > 1.080005)
+			gravity -= 9 * Time.deltaTime;
+		
+		characterController.Move(new Vector3(moveInput.x * speed * Time.deltaTime, gravity, moveInput.y * speed * Time.deltaTime));
+		
 		rotacaoX += Input.GetAxis("Mouse X");
 		rotacaoY += Input.GetAxis("Mouse Y");
 
