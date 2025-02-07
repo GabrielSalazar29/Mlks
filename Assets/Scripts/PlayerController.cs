@@ -4,11 +4,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	public bool drawDebug;
 	public float rayDistance;
+	public int força;
+	public List<GameObject> inventario = new();
+
+
+
 	private Ray ray;
 	private RaycastHit hit;
 	private bool isHitting;
 	private float currentHitDistance;
-	public List<GameObject> inventario = new();
 	private Dictionary<string, string> teclasInventario = new Dictionary<string, string>();
 	private string nomeHittado;
 
@@ -25,8 +29,12 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.E) && hit.transform.gameObject.layer == 6) {
 				inventario.Add(hit.transform.gameObject);
 				hit.transform.gameObject.SetActive(false);
+			}
 
-				UIController.instance.CallMensageBox($"Pegou o item \"{nomeHittado}\"");
+			if (Input.GetKeyDown(KeyCode.Mouse0) && hit.transform.gameObject.layer == 6) {
+
+				hit.transform.GetComponent<Follow>().SetStat(30);
+
 			}
 		}
 	}
