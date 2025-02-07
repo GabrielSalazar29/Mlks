@@ -23,8 +23,8 @@ public class Follow : MonoBehaviour {
 
 			if (zumbis < 10)
 				Instantiate(this, transform.parent).Initialize();
-
 		}
+
 		agent.SetDestination(MoveController.instance.transform.position);
 	}
 

@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	public bool drawDebug;
 	public float rayDistance;
-	public int força;
 	public List<GameObject> inventario = new();
 
 
