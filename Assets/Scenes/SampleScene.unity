@@ -401,6 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670606321}
   - component: {fileID: 670606320}
+  - component: {fileID: 670606322}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -436,6 +437,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &670606322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670606319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c394740827c41467383805eb391197df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  player: {fileID: 1431393383}
+  inventory: []
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +862,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawDebug: 1
   rayDistance: 1
-  inventario: []
 --- !u!1 &1434835435
 GameObject:
   m_ObjectHideFlags: 0

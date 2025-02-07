@@ -11,15 +11,14 @@ public class UIController : MonoBehaviour
     {
         if (instance != null)
             Destroy(instance);
-        
         instance = this;
     }
 
-public void CallMensageBox(string mensagem)
-{
-        StopAllCoroutines();
-        StartCoroutine(MensageBoxRoutine(mensagem));
-    }
+    public void CallMensageBox(string mensagem)
+    {
+            StopAllCoroutines();
+            StartCoroutine(MensageBoxRoutine(mensagem));
+    }   
 
     private IEnumerator MensageBoxRoutine(string mensagem)
     {
