@@ -40,10 +40,7 @@ public class PlayerController : MonoBehaviour
 
                 UIController.instance.CallMensageBox($"Pegou o item \"{nomeHittado}\"");
             }
-            print(inventario.Count);
         }
-
-        escolheItemInventario();
     }
     
     void OnDrawGizmos() {
@@ -52,14 +49,6 @@ public class PlayerController : MonoBehaviour
         if (drawDebug) {
             Debug.DrawLine(ray.origin, ray.origin + (ray.direction * currentHitDistance));
             Gizmos.DrawWireSphere(ray.origin + (ray.direction * currentHitDistance), charController.height / 4);
-        }
-    }
-
-    void escolheItemInventario()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            print(inventario[0].name);
         }
     }
 }
