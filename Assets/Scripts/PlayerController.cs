@@ -20,16 +20,19 @@ public class PlayerController : MonoBehaviour {
 		if (_isHitting && _hit.transform.name != "Plane") {
 			_targetObjectName = _hit.transform.name;
 			if (Input.GetKeyDown(KeyCode.E) && _hit.transform.gameObject.layer == 6) {
-				if (InventoryController.instance.AddItemToInventory(_hit.transform.gameObject))
-				{
+				if (InventoryController.instance.AddItemToInventory(_hit.transform.gameObject)) {
 					_hit.transform.gameObject.SetActive(false);
 					UIController.instance.CallMensageBox($"Pegou o item \"{_targetObjectName}\"");
 				}
-				else 
+				else
 					UIController.instance.CallMensageBox("Inventário cheio!");
 			}
+
+			if (Input.GetKeyDown(KeyCode.Mouse0) && _hit.transform.gameObject.layer == 6)
+				_hit.transform.GetComponent<Follow>().SetStat(30);
+
 		}
-		
+
 	}
 
 	void OnDrawGizmos() {
