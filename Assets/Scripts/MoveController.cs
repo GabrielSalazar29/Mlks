@@ -1,14 +1,22 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MoveController : MonoBehaviour {
+
+	public static MoveController instance;
 	public int speed;
+	public CharacterController characterController;
 	private float _rotacaoX;
 	private float _rotacaoY;
 	private Vector2 _moveInput;
-	public CharacterController characterController;
 	private float _gravity;
+
+	private void Awake() {
+		if (instance != null)
+			Destroy(instance);
+
+		instance = this;
+	}
 
 	public void OnMove(InputValue value) {
 		_moveInput = value.Get<Vector2>();

@@ -845,8 +845,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawDebug: 1
+  rayDistance: 1
   inventario: []
-  textoColeta: {fileID: 2026305578}
 --- !u!1 &1434835435
 GameObject:
   m_ObjectHideFlags: 0
