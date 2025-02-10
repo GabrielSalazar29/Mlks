@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
 					UIController.instance.CallMensageBox("Inventário cheio!");
 			}
 		}
-		
+
 	}
 
 	void OnDrawGizmos() {
