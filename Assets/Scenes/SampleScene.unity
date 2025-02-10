@@ -1277,7 +1277,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168173b26bf469940904ad5265d2e5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  walkSpeed: 3
+  runSpeed: 5
+  currentSpeed: 0
+  stamina: 100
+  staminaConsume: 20
   characterController: {fileID: 1431393388}
 --- !u!114 &1431393391
 MonoBehaviour:

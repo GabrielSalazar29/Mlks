@@ -56,8 +56,6 @@ public class MoveController : MonoBehaviour {
 
     private IEnumerator Run()
     {
-        float startStamina = stamina;
-        float progress = 0f;
         while (stamina > 0.01f || Input.GetKeyUp(KeyCode.LeftShift))
         {
             currentSpeed = runSpeed;
@@ -78,14 +76,11 @@ public class MoveController : MonoBehaviour {
 			yield return null;
         }
 
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(3);
         
         currentSpeed = walkSpeed;
-        startStamina = stamina;
-        progress = 0f;
         while (stamina <= 100)
         {
-            progress += Time.deltaTime * 0.2f;
             stamina += Time.deltaTime * staminaConsume;
             yield return null;
         }
